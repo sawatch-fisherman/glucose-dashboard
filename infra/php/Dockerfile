@@ -1,4 +1,4 @@
-FROM php:8.1-fpm-buster
+FROM php:8.2-fpm-buster
 
 # 環境変数の設定
 ENV COMPOSER_ALLOW_SUPERUSER=1 \
