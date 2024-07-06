@@ -25,7 +25,7 @@ docker compose up -d
 ## Laravel 11のInstall
 docker compose exec app composer create-project --prefer-dist laravel/laravel="^11.0" .
 
-## .evnの編集
+## .evnの編集 その1
 ### 権限を変更
 docker compose exec app chmod -R 777 .env
 
@@ -37,6 +37,13 @@ DB_PORT=3306
 DB_DATABASE=laravel
 DB_USERNAME=phper
 DB_PASSWORD=secret631
+
+### 言語とタイムゾーンを設定
+APP_TIMEZONE=Asia/Tokyo
+APP_LOCALE=ja
+APP_FALLBACK_LOCALE=ja
+APP_FAKER_LOCALE=ja_JP
+
 
 ## 細かい設定
 ## 本設定を実行しないと localhost でTOPページにアクセスしてもエラーとなる
@@ -76,6 +83,8 @@ php artisan breeze:install vue
 
 # npmパッケージのインストール
 docker compose exec app npm install
+
+
 
 # devの実行
 npm run dev
