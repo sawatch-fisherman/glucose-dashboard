@@ -1,0 +1,159 @@
+﻿# A5:ER FORMAT:18
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright © 2007 m.matsubara
+# A5:SQL Mk-2 Version 2.19.2 Copyright © 1997 - 2024 m.matsubara
+#  https://a5m2.mmatsubara.com
+
+[Manager]
+ProjectName=glucose-dashboard
+Author=sawatch
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Comment=血糖値の測定結果を記録し、一覧の表、折れ線グラフで表示するためのシステム　のER図
+Page=Main
+PageInfo="Main",2,"A3Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Meiryo UI
+FontSize=6
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=6
+RDBMSTypeName=MySQL
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+UpperCaseKeyword=0
+ShowTag=1
+ShowCommonAttributes=0
+BugFixEntityWidth=1
+
+[Entity]
+PName=users
+LName=ユーザー
+Comment=
+TableInnerOption=
+TableOption=
+Page=MAIN
+Left=600
+Top=400
+Field="ID","id","INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="UUID","uuid","VARCHAR(16)","NOT NULL",,"","",$FFFFFFFF,""
+Field="ニックネーム","nickname","VARCHAR(100)","NOT NULL",,"","",$FFFFFFFF,""
+Field="メールアドレス","email","VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="パスワード","password","VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="登録日","created_at","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日時","updated_at","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="論理削除日時","deleted_at","DATETIME",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240706112005
+Position="MAIN",600,400,198,226
+ZOrder=1
+
+[Entity]
+PName=medications
+LName=薬
+Comment=
+TableInnerOption=
+TableOption=
+Page=Main
+Left=1200
+Top=950
+Field="ID","id","INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ユーザーUUID","uuid","VARCHAR(16)","NOT NULL",1,"","",$FFFFFFFF,""
+Field="薬名","medication_name","VARCHAR(100)","NOT NULL",,"","",$FFFFFFFF,""
+Field="投薬の単位","dosage_unit","VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="登録日","created_at","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日時","updated_at","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="論理削除日時","deleted_at","DATETIME",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240708062257
+Position="Main",1200,950
+ZOrder=2
+
+[Entity]
+PName=time_slots
+LName=時間帯
+Comment=ユーザーごとの時間帯の設定
+TableInnerOption=
+TableOption=
+Page=Main
+Left=900
+Top=950
+Field="ID","id","INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ユーザーUUID","uuid","VARCHAR(16)","NOT NULL",1,"","",$FFFFFFFF,""
+Field="時間帯","time_period","VARCHAR(100)","NOT NULL",,"","",$FFFFFFFF,""
+Field="開始時間","start_time","VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="登録日","created_at","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日時","updated_at","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="論理削除日時","deleted_at","DATETIME",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240708062906
+Position="Main",900,950
+ZOrder=3
+
+[Entity]
+PName=user_health_data
+LName=ユーザー健康データ
+Comment=
+TableInnerOption=
+TableOption=
+Page=Main
+Left=1000
+Top=450
+Field="ID","id","INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ユーザーUUID","user_uuid","VARCHAR(16)","NOT NULL",1,"","",$FFFFFFFF,""
+Field="年月日","date","",,,"","",$FFFFFFFF,""
+Field="日時","datetime","",,,"","",$FFFFFFFF,""
+Field="CGM","cgm_value","",,,"","",$FFFFFFFF,""
+Field="SMBG","smbg_value","",,,"","",$FFFFFFFF,""
+Field="登録日","created_at","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日時","updated_at","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="論理削除日時","deleted_at","DATETIME",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240708063931
+Position="Main",1000,450
+ZOrder=4
+
+[Entity]
+PName=NEW_ENTITY1
+LName=ユーザー健康データ
+Comment=
+TableInnerOption=
+TableOption=
+Page=Main
+Left=1300
+Top=450
+Field="ID","id","INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ユーザー健康データID","user_health_data_id","VARCHAR(16)","NOT NULL",1,"","",$FFFFFFFF,""
+Field="薬ID","medication_id","",,,"","",$FFFFFFFF,""
+Field="投薬量","dosage_amount","",,,"","",$FFFFFFFF,""
+Field="登録日","created_at","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日時","updated_at","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="論理削除日時","deleted_at","DATETIME",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240708064154
+Position="Main",1300,450
+ZOrder=5
