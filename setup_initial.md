@@ -15,6 +15,7 @@ Laravelコンテナのソース(/src)配下は空であること。
 →コンテナを作成する。３つのコンテナが作成される
 - appコンテナにLaravelをインストール
 - appコンテナにnode.jsをインストール
+- appコンテナに必要なライブラリをインストール
 
 
 # Dockerコンテナのビルドと起動
@@ -84,11 +85,34 @@ php artisan breeze:install vue
 # npmパッケージのインストール
 docker compose exec app npm install
 
+# 画面起動(localhostでページ表示)
+appのコンテナ内で実行する
 
-
-# devの実行
+## devの実行
 npm run dev
 
+## Laravelのサーバー起動
+php artisan serve --port=8081
 
 
+# ライブラリの追加
+環境構築が終わったあとは、お好みでライブラリを追加する。
+その時々にあったライブラリをインストールすること。下記はあくまで参考である。
 
+前提：
+appのコンテナ内で実行する
+
+## 日本語設定
+https://github.com/askdkc/breezejp をインストール
+注意点：
+LaravelのライブラリのためVue側は日本語化されない。よってログイン画面は英語のままである。
+バリデーションなどLaravel側の処理のため日本語になる。よってバリデーションエラーは日本語になる。
+
+composer require askdkc/breezejp --dev
+php artisan breezejp
+
+## デバッグバーのインストール
+デバッグ用のツール
+composer require barryvdh/laraveldebugbar
+
+以上。
