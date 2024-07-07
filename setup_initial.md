@@ -113,6 +113,6 @@ php artisan breezejp
 
 ## デバッグバーのインストール
 デバッグ用のツール
-composer require barryvdh/laraveldebugbar
+composer require --dev barryvdh/laravel-debugbar
 
 以上。
