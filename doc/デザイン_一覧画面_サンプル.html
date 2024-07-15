@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Nested Tables</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-5">
+    <div class="max-w-7xl mx-auto overflow-hidden">
+        <table class="min-w-full table-auto bg-white shadow-md rounded-lg overflow-hidden">
+            <thead class="">
+                <tr>
+                    <th class="px-4 py-3 border" rowspan="2">日付</th>
+                    <th class="px-4 py-3 border" colspan="2">朝</th>
+                    <th class="px-4 py-3 border" colspan="2">昼</th>
+                    <th class="px-4 py-3 border" colspan="2">夕</th>
+                    <th class="px-4 py-3 border" rowspan="2">備考</th>
+                </tr>
+                <tr>
+                    <th class="px-4 py-3 border">前</th>
+                    <th class="px-4 py-3 border">後</th>
+                    <th class="px-4 py-3 border">前</th>
+                    <th class="px-4 py-3 border">後</th>
+                    <th class="px-4 py-3 border">前</th>
+                    <th class="px-4 py-3 border">後</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b">
+                    <td class="px-4 py-4 border">07/01</td>
+                    <td class="px-4 py-4 border">
+                        <table class="min-w-full bg-gray-100 border">
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                        <table class="min-w-full bg-gray-100 border">
+                            <tr>
+                                <td class="px-2 py-1">11:00</td>
+                                <td class="px-2 py-1">(150)</td>
+                                <td class="px-2 py-1">Q3</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">120</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="px-4 py-4 border">
+                        <table class="min-w-full bg-gray-100 border">
+                            <tr>
+                                <td class="px-2 py-1">11:00</td>
+                                <td class="px-2 py-1">(150)</td>
+                                <td class="px-2 py-1">Q3</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">120</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="px-4 py-4 border">
+                        <table class="min-w-full bg-gray-100 border">
+                            <tr>
+                                <td class="px-2 py-1">12:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="px-4 py-4 border">
+                        <table class="min-w-full bg-gray-100 border">
+                            <tr>
+                                <td class="px-2 py-1">12:30</td>
+                                <td class="px-2 py-1">(150)</td>
+                                <td class="px-2 py-1">Q3</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">120</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="px-4 py-4 border">
+                        <table class="min-w-full bg-gray-100">
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="px-4 py-4 border">
+                        <table class="min-w-full bg-gray-100">
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        病院
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td class="px-4 py-4 border">07/02</td>
+                    <td class="px-4 py-4 border">
+                        <table class="min-w-full bg-gray-40 border">
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                        <table class="min-w-full bg-gray-100">
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="px-4 py-4 border">
+                    </td>
+                    <td class="px-4 py-4">
+                        <table class="min-w-full bg-gray-100">
+                            <tr>
+                                <td class="px-2 py-1">18:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="px-4 py-4 border">
+                    </td>
+                    <td class="px-4 py-4 border">
+                        <table class="min-w-full bg-gray-100">
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="px-4 py-4 border">
+                        <table class="min-w-full bg-gray-100">
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        病院
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td class="px-4 py-4 border">07/03</td>
+                    <td class="px-4 py-4 border">
+                        <table class="min-w-full bg-gray-100">
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="px-4 py-4 border">
+                        <table class="min-w-full bg-gray-100">
+                            <tr>
+                                <td class="px-2 py-1">12:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="px-4 py-4">
+                        <table class="min-w-full bg-gray-100">
+                            <tr>
+                                <td class="px-2 py-1">18:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="px-4 py-4 border">
+                        <table class="min-w-full bg-gray-100">
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="px-4 py-4 border">
+                        <table class="min-w-full bg-gray-100">
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="px-4 py-4 border">
+                        <table class="min-w-full bg-gray-100">
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                        <table class="min-w-full bg-gray-50 border">
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        病院
+                    </td>
+                </tr>
+                <tr class="border-b">
+                    <td class="px-4 py-4 border">07/04</td>
+                    <td class="px-4 py-4 border">
+                        <table class="min-w-full bg-gray-100">
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="px-4 py-4 border">
+                        <table class="min-w-full bg-gray-100">
+                            <tr>
+                                <td class="px-2 py-1">12:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="px-4 py-4">
+                        <table class="min-w-full bg-gray-100">
+                            <tr>
+                                <td class="px-2 py-1">18:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="px-4 py-4 border">
+                        <table class="min-w-full bg-gray-100">
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="px-4 py-4 border">
+                        <table class="min-w-full bg-gray-100">
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="px-4 py-4 border">
+                        <table class="min-w-full bg-gray-100">
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1">09:00</td>
+                                <td class="px-2 py-1">(220)</td>
+                                <td class="px-2 py-1">Q2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-1"></td>
+                                <td class="px-2 py-1">260</td>
+                                <td class="px-2 py-1"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        病院
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
