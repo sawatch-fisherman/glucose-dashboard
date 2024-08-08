@@ -135,7 +135,7 @@ Field="ID","id","INT","NOT NULL",0,"","",$FFFFFFFF,""
 Field="ユーザーUUID","user_uuid","VARCHAR(16)","NOT NULL",1,"","",$FFFFFFFF,""
 Field="列","col","@INT","NOT NULL",,"","",$FFFFFFFF,""
 Field="年月日","date","","NOT NULL",,"","",$FFFFFFFF,""
-Field="日時","datetime","",,,"","",$FFFFFFFF,""
+Field="日時","time","",,,"","",$FFFFFFFF,""
 Field="CGM","cgm_value","",,,"","",$FFFFFFFF,""
 Field="SMBG","smbg_value","",,,"","",$FFFFFFFF,""
 Field="登録日","created_at","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
@@ -144,7 +144,7 @@ Field="論理削除日時","deleted_at","DATETIME",,,"","",$FFFFFFFF,""
 EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
-ModifiedDateTime=20240808055351
+ModifiedDateTime=20240809062301
 Position="MAIN",1000,500,154,343
 ZOrder=4
 
