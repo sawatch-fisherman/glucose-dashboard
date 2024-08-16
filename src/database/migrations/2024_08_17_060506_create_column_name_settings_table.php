@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('column_name_settings', function (Blueprint $table) {
             $table->bigIncrements('id')->comment('ID');
-            $table->string('user_uuid', 16)->nullable()->default('0')->comment('ユーザーUUID');
+            $table->unsignedBigInteger('user_id')->index('fk_column_name_settings_users')->comment('ユーザーUUID');
             $table->string('main_item1')->nullable()->default('朝')->comment('メイン項目1');
             $table->string('sub_item1_1')->nullable()->default('前')->comment('サブ項目1-1');
             $table->string('sub_item1_2')->nullable()->default('後')->comment('サブ項目1-2');
@@ -24,8 +24,8 @@ return new class extends Migration
             $table->string('sub_item3_1')->nullable()->default('前')->comment('サブ項目1-1');
             $table->string('sub_item3_2')->nullable()->default('後')->comment('サブ項目1-2');
             $table->string('remarks')->nullable()->default('メモ')->comment('備考');
-            $table->dateTime('created_at')->nullable()->comment('登録日');
-            $table->dateTime('updated_at')->nullable()->comment('更新日時');
+            $table->dateTime('created_at')->comment('登録日');
+            $table->dateTime('updated_at')->comment('更新日時');
             $table->dateTime('deleted_at')->nullable()->comment('論理削除日時');
         });
     }
