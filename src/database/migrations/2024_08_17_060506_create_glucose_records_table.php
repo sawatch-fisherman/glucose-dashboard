@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('glucose_records', function (Blueprint $table) {
             $table->bigIncrements('id')->comment('ID');
-            $table->string('user_uuid', 16)->default('0')->comment('ユーザーUUID');
+            $table->unsignedBigInteger('user_id')->default(0)->index('fk_glucose_records_users')->comment('ユーザーUUID');
             $table->unsignedInteger('col')->default(0)->comment('列');
-            $table->date('date')->nullable()->comment('年月日');
-            $table->time('time')->nullable()->comment('日時');
-            $table->unsignedInteger('cgm_value')->nullable()->comment('CGM');
-            $table->unsignedInteger('smbg_value')->nullable()->comment('SMBG');
+            $table->date('date')->comment('年月日');
+            $table->time('time')->comment('日時');
+            $table->string('cgm_value', 15)->comment('CGM');
+            $table->string('smbg_value', 15)->comment('SMBG');
             $table->dateTime('created_at')->comment('登録日');
-            $table->dateTime('updated_at')->nullable()->comment('更新日時');
+            $table->dateTime('updated_at')->comment('更新日時');
             $table->dateTime('deleted_at')->nullable()->comment('論理削除日時');
         });
     }
