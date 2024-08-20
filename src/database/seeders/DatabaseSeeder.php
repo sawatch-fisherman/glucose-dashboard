@@ -19,5 +19,11 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+        $this->call(UsersTableSeeder::class);
+        $this->call(ColumnNameSettingsTableSeeder::class);
+        $this->call(RemarkRecordsTableSeeder::class);
+        $this->call(GlucoseRecordsTableSeeder::class);
+        $this->call(MedicationSettingsTableSeeder::class);
+        $this->call(MedicationDosagesTableSeeder::class);
     }
 }
