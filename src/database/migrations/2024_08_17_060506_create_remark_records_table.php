@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('remark__records', function (Blueprint $table) {
+        Schema::create('remark_records', function (Blueprint $table) {
             $table->bigIncrements('id')->comment('ID');
             $table->unsignedBigInteger('user_id')->default(0)->index('fk_glucose_records_users')->comment('ユーザーUUID');
             $table->date('date')->comment('年月日');
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('remark__records');
+        Schema::dropIfExists('remark_records');
     }
 };

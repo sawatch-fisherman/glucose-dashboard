@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('remark__records', function (Blueprint $table) {
-            $table->foreign(['user_id'], 'remark__records_ibfk_1')->references(['id'])->on('users')->onUpdate('no action')->onDelete('no action');
+        Schema::table('remark_records', function (Blueprint $table) {
+            $table->foreign(['user_id'], 'remark_records_ibfk_1')->references(['id'])->on('users')->onUpdate('no action')->onDelete('no action');
         });
     }
 
@@ -21,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('remark__records', function (Blueprint $table) {
-            $table->dropForeign('remark__records_ibfk_1');
+        Schema::table('remark_records', function (Blueprint $table) {
+            $table->dropForeign('remark_records_ibfk_1');
         });
     }
 };
