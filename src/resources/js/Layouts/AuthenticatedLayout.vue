@@ -32,6 +32,9 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
+                                <NavLink :href="route('medication-settings.index')" :active="route().current('medication-settings.index')">
+                                    薬設定
+                                </NavLink>
                             </div>
                         </div>
 

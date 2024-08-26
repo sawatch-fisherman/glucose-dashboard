@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreMedicationSettingRequest;
 use App\Http\Requests\UpdateMedicationSettingRequest;
 use App\Models\MedicationSetting;
+use Illuminate\Support\Facades\Log;
+use Inertia\Inertia;
 
 class MedicationSettingController extends Controller
 {
@@ -13,7 +15,15 @@ class MedicationSettingController extends Controller
      */
     public function index()
     {
-        //
+        $medicationSettings = MedicationSetting::all();
+
+        return Inertia::render('MedicationSettings/Index');
+        // return Inertia::render(
+        //     'MedicationSettings/Index',
+        //     [
+        //         'MedicationSettings' => $medicationSettings
+        //     ]
+        // );
     }
 
     /**

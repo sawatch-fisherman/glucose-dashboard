@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\MedicationSettingController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -33,3 +34,5 @@ Route::get('language/{locale}', function ($locale) {
 
     return redirect()->back();
 });
+
+Route::resource('medication-settings', MedicationSettingController::class);
