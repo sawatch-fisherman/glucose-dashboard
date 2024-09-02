@@ -16,14 +16,20 @@ class MedicationSettingController extends Controller
     public function index()
     {
         $medicationSettings = MedicationSetting::all();
+        Log::info($medicationSettings);
 
-        return Inertia::render('MedicationSettings/Index');
-        // return Inertia::render(
-        //     'MedicationSettings/Index',
-        //     [
-        //         'MedicationSettings' => $medicationSettings
-        //     ]
-        // );
+        // TODO:ユーザーIDで絞り込む
+        $maxOrder = MedicationSetting::max('order');
+        Log::info($maxOrder);
+
+        // return Inertia::render('MedicationSettings/Index');
+        return Inertia::render(
+            'MedicationSettings/Index',
+            [
+                'medicines' => $medicationSettings,
+                'maxOrder' => $maxOrder,
+            ]
+        );
     }
 
     /**
