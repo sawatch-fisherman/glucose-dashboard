@@ -1,21 +1,27 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
+import { defineProps } from 'vue';
 
-defineProps({
-    medicines: Array,
-    maxOrder: {
-        type: Number,
-        required: true
-    }
-})
+const props = defineProps({
+  userUuid: {
+    type: String,
+    required: true
+  },
+medicines: Array,
+maxOrder: {
+    type: Number,
+    required: true
+}
+});
+
 </script>
 
 <template>
 
-    <Head title="Dashboard" />
+    <Head title="薬設定" />
 
-    <AuthenticatedLayout>
+    <AuthenticatedLayout :userUuid="userUuid">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">薬設定</h2>
         </template>

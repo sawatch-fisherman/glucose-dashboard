@@ -15,9 +15,11 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+// Route::get('dashboard', function () {
+//     return Inertia::render('Dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -35,4 +37,11 @@ Route::get('language/{locale}', function ($locale) {
     return redirect()->back();
 });
 
-Route::resource('medication-settings', MedicationSettingController::class);
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    // TODO プレフィックスを使用してまとめる
+
+    Route::get('user/{uuid}/medication-settings', [MedicationSettingController::class, 'index'])->name('medication-settings.index');
+    //Route::get('medication-settings', [MedicationSettingController::class, 'index'])->name('medication-settings.index');
+
+});
