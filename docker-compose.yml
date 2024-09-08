@@ -7,6 +7,8 @@ services:
       - 5173:5173
     volumes:
       - ./src:/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  # WSL2でホストマシンに接続するための設定
 
   web:
     container_name: "glucose-dashboard-nginx"
