@@ -5,25 +5,24 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreMedicationSettingRequest;
 use App\Http\Requests\UpdateMedicationSettingRequest;
 use App\Models\MedicationSetting;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 use Inertia\Inertia;
+use Illuminate\Http\Request;
 
 class MedicationSettingController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $medicationSettings = MedicationSetting::orderBy('order')->get();
+        $userUuid = $request->user()->uuid;
+        $userId = $request->user()->id;
 
-        // TODO:ユーザーIDで絞り込む
-        $maxOrder = MedicationSetting::max('order');
+        $medicationSettings = MedicationSetting::where(MedicationSetting::USER_ID, $userId)
+            ->orderBy(MedicationSetting::ORDER, 'asc')
+            ->get();
 
-        // ログインしているユーザーのUUIDを取得
-        $userUuid = Auth::user()->uuid;
-        Log::info($userUuid);
+        $maxOrder = $medicationSettings->max(MedicationSetting::ORDER);
 
         return Inertia::render(
             'MedicationSettings/Index',

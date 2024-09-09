@@ -9,6 +9,8 @@ class MedicationSetting extends Model
 {
     use HasFactory;
 
+    const USER_ID = "user_id";
+    const ORDER = "order";
     const NAME = "name";
     const DOSAGE_UNIT  = "dosage_unit";
     const MEDICATION_ABBR = "medication_abbr";
