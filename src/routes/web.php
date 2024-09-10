@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 // Language Switcher Route 言語切替用ルートだよ
 Route::get('language/{locale}', function ($locale) {
@@ -37,11 +37,9 @@ Route::get('language/{locale}', function ($locale) {
     return redirect()->back();
 });
 
-
-Route::middleware(['auth', 'verified'])->group(function () {
-    // TODO プレフィックスを使用してまとめる
-
-    Route::get('user/{uuid}/medication-settings', [MedicationSettingController::class, 'index'])->name('medication-settings.index');
-    //Route::get('medication-settings', [MedicationSettingController::class, 'index'])->name('medication-settings.index');
-
+Route::middleware(['auth', 'verified'])->prefix('user/{uuid}')->group(function () {
+    Route::get('medication-settings', [MedicationSettingController::class, 'index'])->name('medication-settings.index');
+    Route::get('medication-settings/create', [MedicationSettingController::class, 'create'])->name('medication-settings.create');
+    Route::get('medication-settings/{setting}/edit', [MedicationSettingController::class, 'edit'])->name('medication-settings.update');
 });
+

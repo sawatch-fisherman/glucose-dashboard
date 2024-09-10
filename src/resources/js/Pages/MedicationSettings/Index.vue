@@ -1,6 +1,7 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
+import { Link } from '@inertiajs/vue3';
 import { defineProps } from 'vue';
 
 const props = defineProps({
@@ -49,11 +50,11 @@ maxOrder: {
                                     class="border rounded px-3 py-1 w-16 bg-gray-200">
                                 <input type="text" readonly :value="medicine.medication_abbr"
                                     class="border rounded px-3 py-1 w-16 bg-gray-200">
-                                <button class="bg-green-500 text-white rounded px-4 py-2">編集</button>
+                                <Link as="button" :href="route('medication-settings.update', { uuid: userUuid, setting: medicine.id })" class="bg-green-500 text-white rounded px-4 py-2">編集</Link>
                             </div>
 
                             <!-- 追加ボタン -->
-                            <button class="bg-green-500 text-white rounded px-4 py-2 mt-4">追加</button>
+                            <Link as="button" :href="route('medication-settings.create', { uuid: userUuid })" class="bg-green-500 text-white rounded px-4 py-2 mt-4">追加</Link>
 
                             <!-- 設定ボタン -->
                             <button class="bg-green-500 text-white rounded px-8 py-3 mt-6">設定</button>
