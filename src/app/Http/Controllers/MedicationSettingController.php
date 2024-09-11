@@ -77,9 +77,25 @@ class MedicationSettingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(MedicationSetting $medicationSetting)
+    public function edit(Request $request)
     {
-        //
+        $userUuid = $request->user()->uuid;
+        $userId = $request->user()->id;
+
+        $medicationSettings = MedicationSetting::where(MedicationSetting::USER_ID, $userId)
+            ->orderBy(MedicationSetting::ORDER, 'asc')
+            ->get();
+
+        $maxOrder = $medicationSettings->max(MedicationSetting::ORDER);
+
+        return Inertia::render(
+            'MedicationSettings/Index',
+            [
+                'medicines' => $medicationSettings,
+                'maxOrder' => $maxOrder,
+                'userUuid' => $userUuid,
+            ]
+        );
     }
 
     /**
